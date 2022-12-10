@@ -108,19 +108,19 @@ const handler: NextApiHandler = async (req, res) => {
         data: {
           price: price,
           protocolFee: 0,
-          buyer: events.nft.buyer,
-          seller: events.nft.seller,
+          buyer: events.nft?.buyer ?? "",
+          seller: events.nft?.seller ?? "",
           royaltyFee: paidRoyalty / 1e9,
-          marketplace: events.nft.source,
+          marketplace: events.nft?.source ?? "",
           date: new Date(events.nft.timestamp),
-          signature: events.nft.signature,
+          signature: events.nft?.signature ?? "",
           token: {
             connectOrCreate: {
               create: {
                 mint: tokenMetadata.mint,
                 name: tokenMetadata.offChainData?.name ?? "",
-                image: tokenMetadata.offChainData.image,
-                metaData: tokenMetadata.onChainData.data.uri,
+                image: tokenMetadata.offChainData?.image ?? "",
+                metaData: tokenMetadata.onChainData.data?.uri ?? "",
                 sellerFeeBasisPoints: sellerFeePercent,
                 creators: JSON.stringify(
                   tokenMetadata.onChainData.data?.creators

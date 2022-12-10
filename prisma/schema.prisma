@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Collection {
+  id            Int     @id @default(autoincrement())
+  collectionKey String  @unique
+  avatar        String?
+  banner        String?
+  name          String
+  symbol        String?
+  items         Int     @default(0)
+  verified      Boolean @default(false)
+  Token         Token[]
+  Sale          Sale[]
+}
+
+model Token {
+  id                   Int        @id @default(autoincrement())
+  mint                 String     @unique
+  name                 String
+  image                String
+  metaData             String
+  collectionKey        String
+  collection           Collection @relation(fields: [collectionKey], references: [collectionKey])
+  sellerFeeBasisPoints Int
+  creators             Json
+  sales                Sale[]
+}
+
+model Sale {
+  id            Int        @id @default(autoincrement())
+  mint          String
+  token         Token      @relation(fields: [mint], references: [mint])
+  collectionKey String
+  collection    Collection @relation(fields: [collectionKey], references: [collectionKey])
+  price         Int
+  protocolFee   Int
+  buyer         String
+  seller        String
+  royaltyFee    Int
+  marketplace   String     @db.VarChar(255)
+  date          DateTime
+  signature     String
+}

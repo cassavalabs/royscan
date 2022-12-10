@@ -1,0 +1,302 @@
+[
+  {
+    "mint": "EhphHBWjcv4dec23TGi3jB3dcXuhAdyLQmQ1xhaPZo7A",
+    "onChainData": {
+      "collection": {
+        "key": "7Hz4xgoHzoR8g88zrqVTUx7aGjHZS1ZJ3AQ5CpVZFvtR",
+        "verified": true
+      },
+      "collectionDetails": null,
+      "data": {
+        "creators": [
+          {
+            "address": "DKhD2yqwa5ckDWMQz4aEj3guwoW5krp88fa34jLKXNtw",
+            "share": 0,
+            "verified": true
+          },
+          {
+            "address": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+            "share": 60,
+            "verified": false
+          },
+          {
+            "address": "3SdvcDSNnfCX5ErVUG4QGk6Rd8DFa6n12Gnarj4HarZQ",
+            "share": 40,
+            "verified": false
+          }
+        ],
+        "name": "SOL King #2039",
+        "sellerFeeBasisPoints": 550,
+        "symbol": "SK",
+        "uri": "https://arweave.net/QbknAY5SprauUy7YLSU8h5zK0IPSevnMBeUMCYM9YMA"
+      },
+      "editionNonce": 251,
+      "isMutable": true,
+      "key": "MetadataV1",
+      "mint": "EhphHBWjcv4dec23TGi3jB3dcXuhAdyLQmQ1xhaPZo7A",
+      "primarySaleHappened": true,
+      "tokenStandard": "NonFungible",
+      "updateAuthority": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+      "uses": null
+    },
+    "offChainData": {
+      "attributes": [
+        {
+          "trait_type": "Western Background",
+          "value": "Light Blue"
+        },
+        {
+          "trait_type": "Western Stamp",
+          "value": "Western Kingdom"
+        },
+        {
+          "trait_type": "Western Skin",
+          "value": "Western Blemished"
+        },
+        {
+          "trait_type": "Western Costume",
+          "value": "Western Royal"
+        },
+        {
+          "trait_type": "Western Eyes",
+          "value": "Scar"
+        },
+        {
+          "trait_type": "Western Mouth",
+          "value": "Full Beard"
+        },
+        {
+          "trait_type": "Western Hair",
+          "value": "Aged"
+        }
+      ],
+      "description": "2222 Kings descended from the four corners of the empire to form the Kingdom's army",
+      "external_url": "https://www.solkingsdao.com",
+      "image": "https://arweave.net/xVWa3JY0V0kvxJK8mW9voAuVkWbPfGGNQ1184_OZRNI?ext=png",
+      "name": "SOL King #2039",
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "type": "image/png",
+            "uri": "https://arweave.net/xVWa3JY0V0kvxJK8mW9voAuVkWbPfGGNQ1184_OZRNI?ext=png"
+          }
+        ]
+      },
+      "symbol": "SK"
+    }
+  },
+  {
+    "mint": "H3WKT979wXnGeESkHNCqBSnM3J2BFqcLAn6YkFx3KFAC",
+    "onChainData": {
+      "collection": {
+        "key": "7Hz4xgoHzoR8g88zrqVTUx7aGjHZS1ZJ3AQ5CpVZFvtR",
+        "verified": true
+      },
+      "collectionDetails": null,
+      "data": {
+        "creators": [
+          {
+            "address": "DKhD2yqwa5ckDWMQz4aEj3guwoW5krp88fa34jLKXNtw",
+            "share": 0,
+            "verified": true
+          },
+          {
+            "address": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+            "share": 60,
+            "verified": false
+          },
+          {
+            "address": "3SdvcDSNnfCX5ErVUG4QGk6Rd8DFa6n12Gnarj4HarZQ",
+            "share": 40,
+            "verified": false
+          }
+        ],
+        "name": "SOL King #2221",
+        "sellerFeeBasisPoints": 550,
+        "symbol": "SK",
+        "uri": "https://arweave.net/iq9sY2sLFzlTdE_JFN3edrCF7S_n30OoZ7cXCYh4TBs"
+      },
+      "editionNonce": 255,
+      "isMutable": true,
+      "key": "MetadataV1",
+      "mint": "H3WKT979wXnGeESkHNCqBSnM3J2BFqcLAn6YkFx3KFAC",
+      "primarySaleHappened": true,
+      "tokenStandard": "NonFungible",
+      "updateAuthority": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+      "uses": null
+    },
+    "offChainData": {
+      "attributes": [
+        {
+          "trait_type": "Great King",
+          "value": "Western Great King"
+        }
+      ],
+      "description": "2222 Kings descended from the four corners of the empire to form the Kingdom's army",
+      "external_url": "https://www.solkingsdao.com",
+      "image": "https://arweave.net/q1A97O1MZMX1xVkWHTV0hdLRVkIjW3TFhX0Cu8DqsBo?ext=png",
+      "name": "SOL King #2221",
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "type": "image/png",
+            "uri": "https://arweave.net/q1A97O1MZMX1xVkWHTV0hdLRVkIjW3TFhX0Cu8DqsBo?ext=png"
+          }
+        ]
+      },
+      "symbol": "SK"
+    }
+  },
+  {
+    "mint": "2qv4eFTELDyJamk2Ny8NvC2sfAbeJyNfvbje9PPecwHd",
+    "onChainData": {
+      "collection": {
+        "key": "7Hz4xgoHzoR8g88zrqVTUx7aGjHZS1ZJ3AQ5CpVZFvtR",
+        "verified": true
+      },
+      "collectionDetails": null,
+      "data": {
+        "creators": [
+          {
+            "address": "DKhD2yqwa5ckDWMQz4aEj3guwoW5krp88fa34jLKXNtw",
+            "share": 0,
+            "verified": true
+          },
+          {
+            "address": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+            "share": 60,
+            "verified": false
+          },
+          {
+            "address": "3SdvcDSNnfCX5ErVUG4QGk6Rd8DFa6n12Gnarj4HarZQ",
+            "share": 40,
+            "verified": false
+          }
+        ],
+        "name": "SOL King #2220",
+        "sellerFeeBasisPoints": 550,
+        "symbol": "SK",
+        "uri": "https://arweave.net/T2Z57PM5PT4G0yztTPWqBijsbLNRaz0X1qoGiTGWAik"
+      },
+      "editionNonce": 253,
+      "isMutable": true,
+      "key": "MetadataV1",
+      "mint": "2qv4eFTELDyJamk2Ny8NvC2sfAbeJyNfvbje9PPecwHd",
+      "primarySaleHappened": true,
+      "tokenStandard": "NonFungible",
+      "updateAuthority": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+      "uses": null
+    },
+    "offChainData": {
+      "attributes": [
+        {
+          "trait_type": "Great King",
+          "value": "Northern Great King"
+        }
+      ],
+      "description": "2222 Kings descended from the four corners of the empire to form the Kingdom's army",
+      "external_url": "https://www.solkingsdao.com",
+      "image": "https://arweave.net/bOJTpqbC55HgHl3jumiN8lCaun0pnZ0Hx7DBEHt8doo?ext=png",
+      "name": "SOL King #2220",
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "type": "image/png",
+            "uri": "https://arweave.net/bOJTpqbC55HgHl3jumiN8lCaun0pnZ0Hx7DBEHt8doo?ext=png"
+          }
+        ]
+      },
+      "symbol": "SK"
+    }
+  },
+  {
+    "mint": "RrmyPLpFQkzYsq3Q7wS9AeW9o5ugtM1WSnbTbuBnzLK",
+    "onChainData": {
+      "collection": {
+        "key": "7Hz4xgoHzoR8g88zrqVTUx7aGjHZS1ZJ3AQ5CpVZFvtR",
+        "verified": true
+      },
+      "collectionDetails": null,
+      "data": {
+        "creators": [
+          {
+            "address": "DKhD2yqwa5ckDWMQz4aEj3guwoW5krp88fa34jLKXNtw",
+            "share": 0,
+            "verified": true
+          },
+          {
+            "address": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+            "share": 60,
+            "verified": false
+          },
+          {
+            "address": "3SdvcDSNnfCX5ErVUG4QGk6Rd8DFa6n12Gnarj4HarZQ",
+            "share": 40,
+            "verified": false
+          }
+        ],
+        "name": "SOL King #2217",
+        "sellerFeeBasisPoints": 550,
+        "symbol": "SK",
+        "uri": "https://arweave.net/Rs6AqJmOWdjNH7Y_601sTezA9JS8hT2gY-x_IaJ_ecw"
+      },
+      "editionNonce": 255,
+      "isMutable": true,
+      "key": "MetadataV1",
+      "mint": "RrmyPLpFQkzYsq3Q7wS9AeW9o5ugtM1WSnbTbuBnzLK",
+      "primarySaleHappened": true,
+      "tokenStandard": "NonFungible",
+      "updateAuthority": "SKDSKGqgEPPyRUcbeP3Djmjncyrrwy4pGPEhfEY45QY",
+      "uses": null
+    },
+    "offChainData": {
+      "attributes": [
+        {
+          "trait_type": "Western Background",
+          "value": "Light Pink"
+        },
+        {
+          "trait_type": "Western Stamp",
+          "value": "Western Kingdom"
+        },
+        {
+          "trait_type": "Western Skin",
+          "value": "Very Pale"
+        },
+        {
+          "trait_type": "Western Costume",
+          "value": "Western Royal"
+        },
+        {
+          "trait_type": "Western Eyes",
+          "value": "Dark Blue"
+        },
+        {
+          "trait_type": "Western Mouth",
+          "value": "Big Mustache"
+        },
+        {
+          "trait_type": "Western Hair",
+          "value": "Combed"
+        }
+      ],
+      "description": "2222 Kings descended from the four corners of the empire to form the Kingdom's army",
+      "external_url": "https://www.solkingsdao.com",
+      "image": "https://arweave.net/O1-T2umtHjCezw6WKws30Q5Vyp1zgYzd0gll1M0kcUI?ext=png",
+      "name": "SOL King #2217",
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "type": "image/png",
+            "uri": "https://arweave.net/O1-T2umtHjCezw6WKws30Q5Vyp1zgYzd0gll1M0kcUI?ext=png"
+          }
+        ]
+      },
+      "symbol": "SK"
+    }
+  }
+]

@@ -51,13 +51,24 @@ const handler: NextApiHandler = async (req, res) => {
           paidRoyalty = paidRoyalty + royalty.amount;
         });
 
+      const sellerFeePercent =
+        tokenMetadata.onChainData.data.sellerFeeBasisPoints / 100;
+      const price = events.nft.amount / 1e9;
+      const collectionName =
+        tokenMetadata.offChainData?.name.split("#")[0].trimEnd() ?? "";
+      const collectionSymbol = tokenMetadata.offChainData?.symbol ?? "";
+
+      const collectionKey =
+        tokenMetadata.onChainData.collection?.key ??
+        tokenMetadata.onChainData.updateAuthority + "_" + collectionSymbol;
+
       const store = await prisma.sale.create({
         data: {
-          price: events.nft.amount,
+          price: price,
           protocolFee: 0,
           buyer: events.nft.buyer,
           seller: events.nft.seller,
-          royaltyFee: paidRoyalty,
+          royaltyFee: paidRoyalty / 1e9,
           marketplace: events.nft.source,
           date: new Date(events.nft.timestamp),
           signature: events.nft.signature,
@@ -65,23 +76,22 @@ const handler: NextApiHandler = async (req, res) => {
             connectOrCreate: {
               create: {
                 mint: tokenMetadata.mint,
-                name: tokenMetadata.offChainData.name,
+                name: tokenMetadata.offChainData?.name ?? "",
                 image: tokenMetadata.offChainData.image,
                 metaData: tokenMetadata.onChainData.data.uri,
-                sellerFeeBasisPoints:
-                  tokenMetadata.offChainData.sellerFeeBasisPoints,
+                sellerFeeBasisPoints: sellerFeePercent,
                 creators: JSON.stringify(
-                  tokenMetadata.onChainData.data.creators
+                  tokenMetadata.onChainData.data?.creators
                 ),
                 collection: {
                   connectOrCreate: {
                     create: {
-                      collectionKey: tokenMetadata.onChainData.collection.key,
-                      name: tokenMetadata.offChainData.name.split("#")[0],
-                      symbol: tokenMetadata.offChainData.symbol,
+                      collectionKey: collectionKey,
+                      name: collectionName,
+                      symbol: collectionSymbol,
                     },
                     where: {
-                      collectionKey: tokenMetadata.onChainData.collection.key,
+                      collectionKey: collectionKey,
                     },
                   },
                 },
@@ -94,17 +104,19 @@ const handler: NextApiHandler = async (req, res) => {
           collection: {
             connectOrCreate: {
               create: {
-                collectionKey: tokenMetadata.onChainData.collection.key,
-                name: tokenMetadata.offChainData.name.split("#")[0],
-                symbol: tokenMetadata.offChainData.symbol,
+                collectionKey: collectionKey,
+                name: collectionName,
+                symbol: collectionSymbol,
               },
               where: {
-                collectionKey: tokenMetadata.onChainData.collection.key,
+                collectionKey: collectionKey,
               },
             },
           },
         },
       });
+
+      console.log("Store succeded");
 
       if (!store) {
         //log why it failed and retry later

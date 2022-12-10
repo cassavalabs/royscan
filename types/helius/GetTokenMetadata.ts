@@ -61,5 +61,6 @@ interface OffChainData {
   attributes: Attribute[];
   sellerFeeBasisPoints: number;
   image: string;
+  description?: string;
   properties: Property;
 }

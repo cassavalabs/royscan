@@ -29,9 +29,10 @@ model Token {
   name                 String
   image                String
   metaData             String
+  description          String?
   collectionKey        String
   collection           Collection @relation(fields: [collectionKey], references: [collectionKey])
-  sellerFeeBasisPoints Int
+  sellerFeeBasisPoints Decimal
   creators             Json
   sales                Sale[]
 }
@@ -42,11 +43,11 @@ model Sale {
   token         Token      @relation(fields: [mint], references: [mint])
   collectionKey String
   collection    Collection @relation(fields: [collectionKey], references: [collectionKey])
-  price         Int
-  protocolFee   Int
+  price         Decimal
+  protocolFee   Decimal
   buyer         String
   seller        String
-  royaltyFee    Int
+  royaltyFee    Decimal
   marketplace   String     @db.VarChar(255)
   date          DateTime
   signature     String

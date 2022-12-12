@@ -6,6 +6,7 @@ import { SearchDropdown } from "./Dropdown";
 import { useDebounce } from "hooks/useDebounce";
 import { useOnClickOutside } from "hooks/useOnClickOutside";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 const Wrapper = styled(FlexColumn)`
   width: 100%;
@@ -77,7 +78,9 @@ const KeyboardShortCut = styled(Flex)`
 
 export const Search = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");
+  const [searchResult, setSearchResult] = useState<any[]>([]);
   const debouncedSearchValue = useDebounce(searchValue, 300);
   const searchRef = useRef<HTMLInputElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -91,7 +94,10 @@ export const Search = () => {
     [inputRef]
   );
 
-  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    !isOpen && setIsOpen(true);
+    setSearchValue(e.target.value);
+  };
 
   useEffect(() => {
     const escapeKeyHandler = (event: KeyboardEvent) => {
@@ -142,6 +148,19 @@ export const Search = () => {
     };
   }, [handleKeyPress, inputRef]);
 
+  useEffect(() => {
+    const fetchResult = async () => {
+      setIsLoading(true);
+      const { data } = await axios.get(
+        `/api/search?search=${debouncedSearchValue}`
+      );
+      setIsLoading(false);
+      setSearchResult(data);
+    };
+
+    fetchResult();
+  }, [debouncedSearchValue]);
+
   return (
     <Wrapper>
       <Container>
@@ -150,17 +169,22 @@ export const Search = () => {
             <BsSearch />
           </Icon>
           <StyledInput
-            placeholder="Search..."
-            onChange={(e) => {
-              !isOpen && setIsOpen(true);
-            }}
+            placeholder="Search collection..."
+            onChange={(e) => handleChange(e)}
             ref={inputRef}
             onClick={() => !isOpen && setIsOpen(true)}
+            value={searchValue}
           />
           {!isOpen && <KeyboardShortCut>/</KeyboardShortCut>}
         </InputContainer>
       </Container>
-      {isOpen && <SearchDropdown ref={searchRef} />}
+      {isOpen && (
+        <SearchDropdown
+          ref={searchRef}
+          collections={searchResult}
+          isLoading={isLoading}
+        />
+      )}
     </Wrapper>
   );
 };

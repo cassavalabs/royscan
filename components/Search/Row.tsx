@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Flex, FlexColumn } from "theme/components";
 
-const Container = styled(Link)`
+const Container = styled(Link)<{ isLoading?: boolean }>`
   width: 100%;
   padding: 0.5rem 1rem 1rem;
   align-items: center;
@@ -11,6 +11,7 @@ const Container = styled(Link)`
   :hover {
     background-color: ${({ theme }) => theme.bg300};
   }
+  user-select: ${({ isLoading }) => (isLoading ? "none" : "auto")};
 `;
 
 const Column = styled(FlexColumn)<{ width?: string }>`
@@ -53,24 +54,29 @@ interface RowProps {
   name: string;
   symbol: string;
   image: string;
-  items: number;
-  verified: boolean;
+  collectionKey: string;
+  items?: number;
+  isLoading?: boolean;
 }
 
-export const Row = () => {
+export const Row = ({
+  name,
+  symbol,
+  image,
+  collectionKey,
+  items,
+  isLoading,
+}: RowProps) => {
   return (
-    <Container href="/">
+    <Container href={`/collection/${collectionKey}`} isLoading={isLoading}>
       <Column width="60%">
         <StyledRow>
           <AvatarContainer>
-            <StyledImage
-              src="https://famousfoxes.com/hd/2154.png"
-              alt="avatar"
-            />
+            <StyledImage src={image} alt={symbol} />
           </AvatarContainer>
           <FlexColumn>
-            <Title>CryptoPunks</Title>
-            <SubTitle>~10,000 items</SubTitle>
+            <Title>{name}</Title>
+            <SubTitle>~{items} items</SubTitle>
           </FlexColumn>
         </StyledRow>
       </Column>

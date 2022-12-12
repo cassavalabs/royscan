@@ -1,7 +1,5 @@
-import { Navbar } from "components/Navbar";
 import { Search } from "components/Search";
 import Image from "next/image";
-import { useState } from "react";
 import styled from "styled-components";
 import { Flex, FlexColumn } from "theme/components";
 
@@ -30,15 +28,10 @@ const SearchContainer = styled(Flex)`
 export default function HomeView() {
   return (
     <Wrapper>
-      <Navbar isHome={true} />
+      {/* <Navbar isHome={true} /> */}
       <Container>
         <BrandLogo href="/">
-          <Image
-            src="/logo-large.png"
-            width="272"
-            height="92"
-            alt="logo"
-          />
+          <Image src="/logo-large.png" width="272" height="92" alt="logo" />
         </BrandLogo>
         <SearchContainer>
           <Search />

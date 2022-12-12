@@ -5,10 +5,11 @@ import { Flex, FlexColumn, FlexStart } from "theme/components";
 
 import { Row } from "./Row";
 
-const Wrapper = styled(FlexColumn)`
+const Wrapper = styled(FlexColumn)<{ isLoading?: boolean }>`
   width: 100%;
   position: relative;
   border-top: 0.1rem solid ${({ theme }) => theme.bg100};
+  opacity: ${({ isLoading }) => (isLoading ? 0.4 : 1)};
 `;
 
 const Container = styled(FlexColumn)<{ isOpen?: boolean }>`
@@ -47,24 +48,28 @@ const SubTitle = ({ title, icon }: { title: string; icon?: ReactNode }) => {
 
 interface SearchDropdownProps {
   isLoading?: boolean;
+  collections: any[];
 }
-
-const RecentSearch = () => {
-  return (
-    <>
-      <SubTitle title="Recent searches" icon={<HiOutlineClock />} />
-      <Row />
-      <Row />
-    </>
-  );
-};
 
 export const SearchDropdown = forwardRef<HTMLDivElement, SearchDropdownProps>(
   (props, ref) => {
     return (
-      <Wrapper>
+      <Wrapper isLoading={props.isLoading}>
         <Container ref={ref}>
-          <RecentSearch />
+          <SubTitle title="Search results" icon={<HiOutlineClock />} />
+          {props.collections?.map((collection, index) => {
+            return (
+              <Row
+                key={index}
+                name={collection.name}
+                symbol={collection.symbol}
+                image={collection.Token[0].image}
+                collectionKey={collection.collectionKey}
+                isLoading={props.isLoading}
+                items={collection._count.Token}
+              />
+            );
+          })}
         </Container>
       </Wrapper>
     );

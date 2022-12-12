@@ -56,7 +56,12 @@ export const Navbar = ({ isHome }: { isHome?: boolean }) => {
           <NavLink href="/about">About</NavLink>
           <NavLink href="/rewards">Rewards</NavLink>
           <NavLink href="/analytics">Analytics</NavLink>
-          <NavLink href="/api">API</NavLink>
+          <NavLink href="https://github.com/cassavalabs/royscan">
+            Api
+          </NavLink>
+          <NavLink href="https://github.com/cassavalabs/royscan">
+            Github
+          </NavLink>
           <AccountDetail />
         </FlexEnd>
       </Container>

@@ -39,3 +39,11 @@ export const FlexColumnCenter = styled(FlexCenter)`
 export const FlexEnd = styled(FlexStart)`
   justify-content: flex-end;
 `;
+
+export const Container = styled(FlexColumn)`
+  width: 100%;
+  max-width: 60rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5rem;
+`;

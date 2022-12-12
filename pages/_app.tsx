@@ -1,9 +1,15 @@
 import type { AppProps } from "next/app";
-import { GlobalStyle } from "style";
+import { Container, GlobalStyle } from "style";
 import { ThemeProvider } from "contexts/theme";
 import Head from "next/head";
+import { Navbar } from "components/Navbar";
+import { useRouter } from "next/router";
+
+import "antd/dist/reset.css";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <ThemeProvider>
       <Head>
@@ -14,7 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Container>
+        <Navbar isHome={router.pathname === "/"} />
+        <Component {...pageProps} />
+      </Container>
       <GlobalStyle />
     </ThemeProvider>
   );

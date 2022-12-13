@@ -38,6 +38,10 @@ Base Api URL `https://royscan.com`
 - [ ] Allow creators to reward and automate rewarding of holders who paid royalty fee
 - [ ] Expose more helpful public Api to allow other dApps to interface with the service
 
+# Vision
+
+To become the leading royalty and NFT explorer on the Solana blockchain.
+
 # License
 
 The Royscan project is licensed under the terms of the GPL Open Source license and is available for free.
@@ -45,4 +49,4 @@ The Royscan project is licensed under the terms of the GPL Open Source license a
 # Quick Links
 
 - [Live demo](https://royscan.com)
-- [Video demo](https://royscan.com)
+- [Video demo](https://vimeo.com/780488800)
